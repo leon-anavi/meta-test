@@ -1,0 +1,73 @@
+This README file contains information on the contents of the
+test layer.
+
+Please see the corresponding sections below for details.
+
+This layer provides a recipe to generate a dummy package with
+large file size. Configure the size by setting the version of
+test-package to 1, 10 or 100. The version number corresponds
+to the file size in MB. For example, add the following line
+to conf/local.conf to generate test package with file size 10MB:
+
+  PREFERRED_VERSION_test-package = "10"
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: master
+
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: master
+
+  URI: git://git.yoctoproject.org/xxxx
+  layers: xxxx
+  branch: master
+
+
+Patches
+=======
+
+Please submit any patches against the test layer through GitHub.
+
+
+Table of Contents
+=================
+
+  I. Adding the test layer to your build
+ II. Misc
+
+
+I. Adding the test layer to your build
+=================================================
+
+In order to use this layer, you need to make the build system aware of
+it.
+
+Assuming the test layer exists at the top-level of your
+yocto build tree, you can add it to the build system by adding the
+location of the test layer to bblayers.conf, along with any
+other layers needed. e.g.:
+
+  BBLAYERS ?= " \
+    /path/to/yocto/meta \
+    /path/to/yocto/meta-poky \
+    /path/to/yocto/meta-yocto-bsp \
+    /path/to/yocto/meta-test \
+    "
+
+
+II. Misc
+========
+
+Add the following line to conf/local.conf to generate test
+package with file size 1MB:
+
+  PREFERRED_VERSION_test-package = "1"
+
+Alternatively set the version to 10 or 100 to generate package
+with file size of 10MB or 100MB.
+
