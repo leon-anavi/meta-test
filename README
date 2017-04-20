@@ -23,11 +23,6 @@ This layer depends on:
   layers: meta
   branch: master
 
-  URI: git://git.yoctoproject.org/xxxx
-  layers: xxxx
-  branch: master
-
-
 Patches
 =======
 
@@ -68,6 +63,6 @@ package with file size 1MB:
 
   PREFERRED_VERSION_test-package = "1"
 
-Alternatively set the version to 10 or 100 to generate package
+Alternatively set the version to 10 or 100 to generate a package
 with file size of 10MB or 100MB.
 
